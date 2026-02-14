@@ -6,11 +6,11 @@ $dataDirectory = __DIR__.'/../data/';
 
 putenv('EXIGUOUS_ECOMMERCE_DATA_DIRECTORY='.$dataDirectory);
 
-$coreSettings = \DivineOmega\ExiguousEcommerce\Settings::find('core');
+$coreSettings = \JordJD\ExiguousEcommerce\Settings::find('core');
 
-$product = \DivineOmega\ExiguousEcommerce\Product::findBySlug('teddy-bear');
+$product = \JordJD\ExiguousEcommerce\Product::findBySlug('teddy-bear');
 
-$basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
+$basket = \JordJD\ExiguousEcommerce\Basket::findCurrent();
 
 $basket->setCurrency($coreSettings->data->primaryCurrency);
 

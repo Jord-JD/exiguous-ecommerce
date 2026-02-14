@@ -1,6 +1,6 @@
 <?php
 
-namespace DivineOmega\ExiguousEcommerce;
+namespace JordJD\ExiguousEcommerce;
 
 class Product
 {

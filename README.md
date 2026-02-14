@@ -37,7 +37,7 @@ common web server configurations.
 Getting products and categories:
 
 ```php
-$category = \DivineOmega\ExiguousEcommerce\Category::findBySlug("fluffy-things");
+$category = \JordJD\ExiguousEcommerce\Category::findBySlug("fluffy-things");
 $products = $category->products();
 
 foreach($products as $product) {
@@ -46,7 +46,7 @@ foreach($products as $product) {
 ```
 
 ```php
-$product = \DivineOmega\ExiguousEcommerce\Product::findBySlug("teddy-bear");
+$product = \JordJD\ExiguousEcommerce\Product::findBySlug("teddy-bear");
 $categories = $product->categories();
 
 $mainCategoryName = $categories[0]->data->name;
@@ -55,9 +55,9 @@ $mainCategoryName = $categories[0]->data->name;
 Getting the current user's basket and adding a product to it:
 
 ```php
-$product = \DivineOmega\ExiguousEcommerce\Product::findBySlug("teddy-bear");
+$product = \JordJD\ExiguousEcommerce\Product::findBySlug("teddy-bear");
 
-$basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
+$basket = \JordJD\ExiguousEcommerce\Basket::findCurrent();
 
 $basket->addProduct($product); // Add one Teddy Bear
 
@@ -72,9 +72,9 @@ var_dump($basket->items); // Outputs an array of, you guessed it, basket items! 
 Removing a product from a basket:
 
 ```php
-$product = \DivineOmega\ExiguousEcommerce\Product::findBySlug("teddy-bear");
+$product = \JordJD\ExiguousEcommerce\Product::findBySlug("teddy-bear");
 
-$basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
+$basket = \JordJD\ExiguousEcommerce\Basket::findCurrent();
 
 $basket->removeProduct($product); // Removes all teddy bears from the basket
 ```
@@ -82,9 +82,9 @@ $basket->removeProduct($product); // Removes all teddy bears from the basket
 Setting/Offsetting the quantity of a product in the basket:
 
 ```php
-$product = \DivineOmega\ExiguousEcommerce\Product::findBySlug("teddy-bear");
+$product = \JordJD\ExiguousEcommerce\Product::findBySlug("teddy-bear");
 
-$basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
+$basket = \JordJD\ExiguousEcommerce\Basket::findCurrent();
 
 $basket->addProduct($product); // Add one Teddy Bear
 
@@ -98,7 +98,7 @@ $basket->offsetProductQuantity($product, -5); // Remove five of those Teddy Bear
 Migrating the basket to an order:
 
 ```php
-$basket = \DivineOmega\ExiguousEcommerce\Basket::findCurrent();
+$basket = \JordJD\ExiguousEcommerce\Basket::findCurrent();
 
 $basket->convertToOrder();
 ```
@@ -108,7 +108,7 @@ Getting and using settings:
 ```php
 
 // Retrieves settings from the core.json file within the .settings directory
-$coreSettings = \DivineOmega\ExiguousEcommerce\Settings::find('core');
+$coreSettings = \JordJD\ExiguousEcommerce\Settings::find('core');
 
 echo $coreSettings->data->primaryCurrency; // Output the ecommerce's primary currency setting
 

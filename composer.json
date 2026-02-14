@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "DivineOmega\\ExiguousEcommerce\\": "./src/"
+      "JordJD\\ExiguousEcommerce\\": "./src/"
     }
   },
   "replace": {
@@ -22,7 +22,8 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "2.0-dev"
+      "dev-master": "3.0-dev"
     }
-  }
+  },
+  "require-dev": {}
 }
