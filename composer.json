@@ -18,7 +18,7 @@
     }
   },
   "replace": {
-    "jord-jd/exiguous-ecommerce": "self.version"
+    "divineomega/exiguous-ecommerce": "self.version"
   },
   "extra": {
     "branch-alias": {
