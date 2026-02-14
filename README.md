@@ -7,7 +7,7 @@ Exiguous Ecommerce is a super simple ecommerce library, that uses flat files and
 Just run the following Composer command to download/install Exiguous Ecommerce and create relevant autoload files.
 
 ```
-composer require divineomega/exiguous-ecommerce
+composer require jord-jd/exiguous-ecommerce
 ```
 
 If your framework does not already do so, you must add `require_once "vendor/autoload.php"` to any files in which you wish to use Exiguous Ecommerce.
@@ -24,7 +24,7 @@ EXIGUOUS_ECOMMERCE_DATA_DIRECTORY=/var/www/ecommerce-site/path-to-data-directory
 ```
 
 If you are not using a framework that supports this, you can use the standard PHP function `putenv` to set this environment variable.
-Alternatively, you could use [dotenv-loader](https://github.com/DivineOmega/dotenv-loader) to add `.env` file support to your project.
+Alternatively, you could use [dotenv-loader](https://github.com/Jord-JD/dotenv-loader) to add `.env` file support to your project.
 
 Please note that it is important the `EXIGUOUS_ECOMMERCE_DATA_DIRECTORY` variable is set with a trailing slash present.
 
