@@ -22,7 +22,7 @@ abstract class ExiguousEcommerceItem
         }
 
         if (!$data = json_decode(file_get_contents($file))) {
-            throw new \Exception('Error(s) exist in the data file for the specified ID ('.json_last_error_msg().'): '.$file);
+            throw new \Exception('Error(s) exist in the data file for the specified ID (JSON error '.json_last_error().'): '.$file);
         }
 
         if (isset($data->deletedAt) && $data->deletedAt > 0) {
@@ -56,7 +56,7 @@ abstract class ExiguousEcommerceItem
 
     public static function all($directory, $class)
     {
-        $objs = [];
+        $objs = array();
 
         for ($id = self::getStartingID($directory); $id < PHP_INT_MAX; $id++) {
             $file = ExiguousEcommerceConfig::getDataDirectory().$directory.'/'.$id.'.json';
@@ -111,7 +111,8 @@ abstract class ExiguousEcommerceItem
     {
         $file = ExiguousEcommerceConfig::getDataDirectory().$directory.'/'.$object->id.'.json';
 
-        $data = json_encode($object->data, JSON_PRETTY_PRINT);
+        $jsonOptions = defined('JSON_PRETTY_PRINT') ? constant('JSON_PRETTY_PRINT') : 0;
+        $data = json_encode($object->data, $jsonOptions);
 
         file_put_contents($file, $data);
     }

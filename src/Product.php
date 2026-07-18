@@ -22,7 +22,9 @@ class Product
         return ExiguousEcommerceItem::findBySlug(self::$directory, self::$class, $slug);
     }
 
+    /** @var int|string|null */
     public $id = null;
+    /** @var object|null */
     public $data = null;
 
     public function __construct($id = null, $data = null)
@@ -38,9 +40,9 @@ class Product
 
     public function categories()
     {
-        $ids = isset($this->data->categoryIds) && is_array($this->data->categoryIds) ? $this->data->categoryIds : [];
+        $ids = isset($this->data->categoryIds) && is_array($this->data->categoryIds) ? $this->data->categoryIds : array();
 
-        $objs = [];
+        $objs = array();
 
         foreach ($ids as $id) {
             $obj = Category::find($id);

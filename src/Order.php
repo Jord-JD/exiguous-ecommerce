@@ -67,7 +67,9 @@ class Order
         return self::find($id);
     }
 
+    /** @var int|string|null */
     public $id = null;
+    /** @var object|null */
     public $data = null;
 
     public function __construct($id, $data)
