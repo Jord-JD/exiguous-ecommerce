@@ -4,15 +4,29 @@ namespace JordJD\ExiguousEcommerce;
 
 class BasketItem
 {
+    /** @var object */
     public $product;
+    /** @var int|float */
     public $quantity;
+    /** @var int|float|null */
+    public $unitCost;
+    /** @var int|float|null */
+    public $lineTotal;
 
+    /**
+     * @param object $product
+     * @param int|float $quantity
+     */
     public function __construct($product, $quantity)
     {
         $this->product = $product;
         $this->quantity = $quantity;
     }
 
+    /**
+     * @param string $currency
+     * @return int|float|null
+     */
     public function unitCost($currency)
     {
         $unitCost = null;
@@ -54,6 +68,10 @@ class BasketItem
         return $unitCost;
     }
 
+    /**
+     * @param string $currency
+     * @return int|float
+     */
     public function lineTotal($currency)
     {
         return $this->unitCost($currency) * $this->quantity;

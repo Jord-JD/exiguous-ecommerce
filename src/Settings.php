@@ -15,13 +15,15 @@ class Settings
         }
 
         if (!$data = json_decode(file_get_contents($file))) {
-            throw new \Exception('Error exists in file ('.json_last_error_msg().'): '.$file);
+            throw new \Exception('Error exists in file (JSON error '.json_last_error().'): '.$file);
         }
 
         return new self($name, $data);
     }
 
+    /** @var string */
     public $name;
+    /** @var object */
     public $data;
 
     public function __construct($name, $data)

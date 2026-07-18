@@ -23,12 +23,19 @@ class Basket
         return $_SESSION['ExiguousEcommerce']->Basket;
     }
 
-    public $items = [];
+    /** @var BasketItem[] */
+    public $items = array();
+    /** @var object|null */
     public $customer = null;
+    /** @var object|null */
     public $billingAddress = null;
+    /** @var object|null */
     public $deliveryAddress = null;
+    /** @var object|null */
     public $deliveryOption = null;
+    /** @var string|null */
     public $currency = null;
+    /** @var object|null */
     public $additionalDetails = null;
 
     public function __construct()
